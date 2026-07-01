@@ -1,0 +1,15 @@
+apiVersion: intersystems.com/v1alpha1
+kind: IrisCluster
+metadata:
+  name: iris
+spec:
+  licenseKeySecret:
+    name: iris-license
+  topology:
+    data:
+      image: quay.io/jkeam1/secured-rest-api:latest
+      podTemplate:
+        spec:
+          args:
+          - --check-caps
+          - "false"

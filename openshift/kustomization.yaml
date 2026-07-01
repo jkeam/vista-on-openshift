@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: vista
+
+resources:
+  - secret.yaml
+  - helmrepo.yaml
+
+commonLabels:
+  app.kubernetes.io/name: iris
+  managed-by: kustomize

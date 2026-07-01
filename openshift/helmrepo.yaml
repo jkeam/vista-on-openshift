@@ -1,0 +1,9 @@
+apiVersion: helm.openshift.io/v1beta1
+kind: ProjectHelmChartRepository
+metadata:
+  name: intersystems
+  connectionConfig:
+    url: 'https://charts.demo.community.intersystems.com'
+  description: InterSystems Helm Repo
+  name: InterSystems
+
