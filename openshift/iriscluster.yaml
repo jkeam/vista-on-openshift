@@ -7,7 +7,7 @@ spec:
     name: iris-license
   topology:
     data:
-      image: quay.io/jkeam1/secured-rest-api@sha256:ff32eac0dedc7736487bb11e508bbfcea856c102e755fad3875aa3527ef20028
+      image: quay.io/jkeam1/secured-rest-api@sha256:bb4a712a8fff8ade57c8fc7bb32edd171bc1e1fbe48343584b86f7d0db5d66fc
       podTemplate:
         spec:
           args:
