@@ -12,8 +12,25 @@ Then use the UI to create to deploy the `IRIS Operator`
 and wait for it to finish deploying.
 
 ```shell
-oc apply -f ./openshift/iriscluster.yaml
+oc create -f ./openshift/iriscluster.yaml
+# if you need to delete and redeploy,
+# restart the iris operator pod
 ```
+
+Then scale the stateful set named `iris-data` down to 0,
+and set the resources for the pod (due to community license):
+
+```yaml
+resources:
+  limits:
+    cpu: 500m
+    memory: 8Gi
+  requests:
+    cpu: 250m
+    memory: 4Gi
+```
+
+And scale back to 1 pod.
 
 ## Resources
 
