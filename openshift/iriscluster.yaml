@@ -7,9 +7,15 @@ spec:
     name: iris-license
   topology:
     data:
-      image: quay.io/jkeam1/secured-rest-api@sha256:a77524ab35fd7a7082e7342a6589c6fc5ba1f1c739ad9ee5b6bcc4f737c2d752
+      image: quay.io/jkeam1/secured-rest-api@sha256:b8478bfac2bafa9a3954fe14f4bef066c3ff55413db84443e4d411074300ce58
       podTemplate:
         spec:
           args:
           - --check-caps
           - "false"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 52773
+          initialDelaySeconds: 30
+          periodSeconds: 10
