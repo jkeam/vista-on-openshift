@@ -13,8 +13,9 @@ and wait for it to finish deploying.
 
 ```shell
 oc create -f ./openshift/iriscluster.yaml
-# if you need to delete and redeploy,
-# restart the iris operator pod
+# if you need to delete and recreate the iriscluster,
+# restart the iris operator pod for faster results.
+# the reconciliation of the iris operator is extremely long.
 ```
 
 Then scale the stateful set named `iris-data` down to 0,
